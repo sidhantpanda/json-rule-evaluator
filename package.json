@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/sidhantpanda/json-rule-evaluator/issues"
   },
-  "homepage": "https://github.com/sidhantpanda/json-rule-evaluator#readme"
+  "homepage": "https://github.com/sidhantpanda/json-rule-evaluator#readme",
+  "devDependencies": {
+    "@types/lodash": "^4.14.165",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
 }
