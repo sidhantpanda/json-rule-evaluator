@@ -1,4 +1,5 @@
-import RuleEvaluator, { Rule } from './lib/rule';
+import RuleEvaluator from './lib/rule';
+// import { Rule } from './lib/rule/types';
 
 const data: any = {
   some: {
@@ -12,12 +13,12 @@ const data: any = {
     string: 'xyz',
   }
 }
-const testRule: Rule = {
+const testRule = {
   '$and': [
     {
       path: 'some.number',
       value: 12,
-      operator: '==',
+      operator: '>',
     },
     {
       path: 'some.boolean',
@@ -25,14 +26,24 @@ const testRule: Rule = {
       operator: '=='
     },
     {
-      path: 'some.boolean',
-      ref: 'other.boolean',
-      operator: 'endsWith'
-    },
-
+      $or: [{
+        path: 'some.boolean',
+        ref: 'other.boolean',
+        operator: 'endsWith'
+      }, {
+        path: 'some.boolean',
+        ref: 'other.boolean',
+        operator: 'endsWith'
+      },]
+    }
   ]
 };
 
-const evaluator = new RuleEvaluator(testRule);
+// const evaluator = new RuleEvaluator(testRule);
+// const processed = evaluator.test(data);
 
-console.log('result', evaluator.test(data));
+
+// console.log('result', processed.result);
+// console.log('tree', JSON.stringify(processed.details, null, 4));
+
+export default RuleEvaluator;

@@ -1,7 +1,7 @@
-import { Rule } from '../src/lib/rule';
+import { Rule } from '../src/lib/rule/types';
 
-const a: Rule = {
-  '$and': [
+export const rule: Rule = {
+  $and: [
     {
       path: 'some.json.path',
       ref: 'r',
@@ -9,38 +9,25 @@ const a: Rule = {
       options: {
         caseSensitive: false
       }
-    },
-    {
-      path: 'some.other.key',
-      value: true,
-      operator: 'is'
-    },
-    {
-      path: 'some.otherd.key',
-      value: true,
-      operator: 'is'
     }, {
-      '$or': [{
-        path: 'some.otherd.key',
-        value: true,
-        operator: 'is'
+      path: 'some.json.path',
+      ref: 'r',
+      operator: 'doesntEndWith'
+    }, {
+      $or: [{
+        path: 'some.json.path',
+        ref: 'r',
+        operator: 'doesntEndWith'
       }, {
-        path: 'some.otherd.key',
-        value: true,
-        operator: 'is'
-      }, {
-        '$and': [
-          {
-            path: 'some.otherd.key',
-            value: true,
-            operator: 'is'
-          },
-          {
-            path: 'some.otherd.key',
-            value: true,
-            operator: 'is'
-          }
-        ]
+        $and: [{
+          path: 'some.json.path',
+          ref: 'r',
+          operator: 'doesntEndWith'
+        }, {
+          path: 'some.json.path',
+          ref: 'r',
+          operator: 'doesntEndWith'
+        }]
       }]
     }
   ]

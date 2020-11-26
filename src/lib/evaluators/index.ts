@@ -6,6 +6,11 @@ import _ from 'lodash';
 
 export type RuleItem = RuleItemBoolean | RuleItemNumber | RuleItemString;
 
+export enum SPECIAL_OPERATORS {
+  $and = '$and',
+  $or = '$or'
+}
+
 export const evaluate = (data: any, rule: RuleItem): boolean => {
   let sourceValue = _.get(data, rule.path, null);
   const warnings = [];
