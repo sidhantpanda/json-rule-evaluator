@@ -1,7 +1,9 @@
 import RuleEvaluator from './lib/rule';
-// import { Rule } from './lib/rule/types';
+import { Rule as InternalRule } from './lib/rule/types';
 
-const data: any = {
+export type Rule = InternalRule;
+
+const data = {
   some: {
     boolean: true,
     number: 12,
@@ -13,7 +15,7 @@ const data: any = {
     string: 'xyz',
   }
 }
-const testRule = {
+const testRule: Rule = {
   '$and': [
     {
       path: 'some.number',
@@ -45,5 +47,6 @@ const testRule = {
 
 // console.log('result', processed.result);
 // console.log('tree', JSON.stringify(processed.details, null, 4));
+
 
 export default RuleEvaluator;

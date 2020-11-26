@@ -54,11 +54,11 @@ export const getResult = (data: any, ruleWithIdentifier: RuleItemNode): boolean 
 };
 
 export default class RuleEvaluator {
-  private rule: Rule;
+  private originalRule: Rule;
   public ruleWithIdentifier: RuleItemNode;
 
   constructor(rule: Rule) {
-    this.rule = rule;
+    this.originalRule = rule;
     this.ruleWithIdentifier = getTree(rule);
   }
 

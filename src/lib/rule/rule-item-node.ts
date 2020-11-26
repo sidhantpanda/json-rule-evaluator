@@ -53,17 +53,11 @@ export default class RuleItemNode {
         this.children = [];
       }
       this.children = [
-        ...this.children!,
+        ...this.children,
         ...children,
       ]
     }
   }
-
-  public setStatus = (status: RULE_ITEM_EVALUATION_STATUS) => {
-    this.status = status;
-  }
-
-  public getStatus = (): RULE_ITEM_EVALUATION_STATUS => this.status;
 }
 
 const getChildren = (items: Array<Rule>): RuleItemNode[] => {
