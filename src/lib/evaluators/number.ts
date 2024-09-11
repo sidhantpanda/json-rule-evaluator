@@ -14,8 +14,15 @@ export default class NumberEvaluator extends BaseEvaluator<RuleItemNumber> {
     super(ruleItem, { loadCommonOperators: true });
 
     this.addOperator('<', (source, target) => source < target);
+    this.addOperator('lt', (source, target) => source < target);
+
     this.addOperator('>', (source, target) => source > target);
+    this.addOperator('gt', (source, target) => source > target);
+
     this.addOperator('<=', (source, target) => source <= target);
+    this.addOperator('lte', (source, target) => source <= target);
+
     this.addOperator('>=', (source, target) => source >= target);
+    this.addOperator('gte', (source, target) => source >= target);
   }
 }

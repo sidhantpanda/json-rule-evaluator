@@ -32,7 +32,7 @@ const testRule: Rule = {
     {
       path: 'some.number',
       value: 12,
-      operator: '>',
+      operator: 'gt',
     },
     {
       path: 'some.boolean',
@@ -73,7 +73,7 @@ console.log(processed);
 //       rule: {
 //         path: "some.number",
 //         value: 12,
-//         operator: ">"
+//         operator: "gt"
 //       },
 //       status: "false"
 //     }, {
@@ -123,10 +123,10 @@ console.log(processed);
 
 - ==
 - !=
-- <
-- \>
-- <=
-- \>=
+- lt (lesser than)
+- gt (greater than)
+- lte (lesser than or equal)
+- gte (greater than or equal)
 
 ##### String
 
