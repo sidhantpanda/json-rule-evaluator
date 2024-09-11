@@ -1,6 +1,6 @@
 import { BaseRuleItem, BaseEvaluator, BaseOperators } from './base';
 
-type NUMBER_OPERATORS = BaseOperators | '<' | '>' | '<=' | '>=';
+type NUMBER_OPERATORS = BaseOperators | '<' | 'lt' | '>' | 'gt' | '<=' | 'lte' | '>=' | 'gte';
 
 export interface RuleItemNumber extends BaseRuleItem {
   /** Value to be checked against */

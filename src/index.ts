@@ -3,43 +3,43 @@ import { Rule as InternalRule } from './lib/rule/types';
 
 export type Rule = InternalRule;
 
-const data = {
-  some: {
-    boolean: true,
-    number: 12,
-    string: 'abc',
-  },
-  other: {
-    boolean: false,
-    number: 2,
-    string: 'xyz',
-  }
-}
-const testRule: Rule = {
-  '$and': [
-    {
-      path: 'some.number',
-      value: 12,
-      operator: '>',
-    },
-    {
-      path: 'some.boolean',
-      value: true,
-      operator: '=='
-    },
-    {
-      $or: [{
-        path: 'some.boolean',
-        ref: 'other.boolean',
-        operator: 'endsWith'
-      }, {
-        path: 'some.boolean',
-        ref: 'other.boolean',
-        operator: 'endsWith'
-      },]
-    }
-  ]
-};
+// const data = {
+//   some: {
+//     boolean: true,
+//     number: 12,
+//     string: 'abc',
+//   },
+//   other: {
+//     boolean: false,
+//     number: 2,
+//     string: 'xyz',
+//   }
+// }
+// const testRule: Rule = {
+//   '$or': [
+//     {
+//       path: 'some.number',
+//       value: 12,
+//       operator: 'gte',
+//     },
+//     {
+//       path: 'some.boolean',
+//       value: true,
+//       operator: '=='
+//     },
+//     {
+//       $or: [{
+//         path: 'some.boolean',
+//         ref: 'other.boolean',
+//         operator: 'endsWith'
+//       }, {
+//         path: 'some.boolean',
+//         ref: 'other.boolean',
+//         operator: 'endsWith'
+//       },]
+//     }
+//   ]
+// };
 
 // const evaluator = new RuleEvaluator(testRule);
 // const processed = evaluator.test(data);
